@@ -1,0 +1,74 @@
+name: notepad
+version: 1.0
+summary: windows notepad under wine in a snap
+description: notepad windows app
+confinement: strict
+grade: stable
+
+#apps:
+#  notepad:
+#    command: ./launcher.sh
+
+parts:
+  wine-2.15:
+    plugin: autotools
+    prepare: |
+        set -e
+        git clone --depth=1 -b wine-2.15 git://source.winehq.org/git/wine.git wine
+        mv wine/* .
+    build-packages:
+      - bison
+      - desktop-file-utils
+      - docbook-to-man
+      - docbook-utils
+      - docbook-xsl
+      - flex
+      - fontforge
+      - gettext
+      - libasound2-dev:i386
+      - libcapi20-dev:i386
+      - libcups2-dev:i386
+      - libdbus-1-dev:i386
+      - libfontconfig-dev:i386
+      - libfreetype6-dev:i386
+      - libgif-dev:i386
+      - libgl-dev:i386
+      - libglu-dev:i386
+      - libgnutls-dev:i386
+      - libgphoto2-dev:i386
+      - libgsm1-dev:i386
+      - libjpeg-dev:i386
+      - liblcms2-dev:i386
+      - libldap2-dev:i386
+      - libmpg123-dev:i386
+      - libncurses-dev:i386
+      - libopenal-dev:i386
+      - libosmesa6-dev:i386
+      - libpng12-dev:i386
+      - libpulse-dev:i386
+      - libsane-dev:i386
+      - libtiff-dev:i386
+      - libv4l-dev:i386
+      - libx11-dev:i386
+      - libxcomposite-dev:i386
+      - libxcursor-dev:i386
+      - libxext-dev:i386
+      - libxi-dev:i386
+      - libxinerama-dev:i386
+      - libxml2-dev:i386
+      - libxrandr-dev:i386
+      - libxrender-dev:i386
+      - libxslt1-dev:i386
+      - libxt-dev:i386
+      - libxxf86vm-dev:i386
+      - linux-kernel-headers
+      - ocl-icd-opencl-dev:i386
+      - oss4-dev
+      - prelink
+      - valgrind
+      - unixodbc-dev:i386
+      - x11proto-xinerama-dev:i386
+
+    stage-packages:
+      - libc-bin
+
