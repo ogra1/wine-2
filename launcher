@@ -1,0 +1,17 @@
+#! /bin/sh
+
+ARCH="i386-linux-gnu"
+
+export WINEVERPATH=$SNAP
+export PATH=$SNAP/bin:$SNAP/usr:bin:$PATH 
+export WINESERVER=$SNAP/bin/wineserver
+export WINELOADER=$SNAP/bin/wine
+export WINEDLLPATH=$SNAP/lib/wine/fakedlls
+export LD_LIBRARY_PATH="$SNAP/lib:$SNAP/lib/$ARCH:$SNAP/usr/lib:$SNAP/usr/lib/$ARCH:$LD_LIBRARY_PATH" 
+
+# fonts
+export XDG_DATA_HOME=$SNAP/usr/share
+export FONTCONFIG_PATH=$SNAP/etc/fonts/config.d
+export FONTCONFIG_FILE=$SNAP/etc/fonts/fonts.conf
+
+exec "$@"

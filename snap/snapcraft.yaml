@@ -4,18 +4,45 @@ summary: windows notepad under wine in a snap
 description: notepad windows app
 confinement: strict
 grade: stable
+architectures: [ amd64 ]
 
-#apps:
-#  notepad:
-#    command: ./launcher.sh
+apps:
+  notepad:
+    command: launcher notepad
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe ]
+  wine:
+    command: launcher wine
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe ]
+  wineserver:
+    command: launcher wineserver
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe ]
+  winecfg:
+    command: launcher winecfg
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe ]
+  regedit:
+    command: launcher regedit
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe ]
+  wineconsole:
+    command: launcher wineconsole
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe ]
+  winefile:
+    command: launcher winefile
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe ]
+
 
 parts:
+  launcher:
+    plugin: nil
+    install: |
+      mkdir -p $SNAPCRAFT_PART_INSTALL/bin
+      cp ./launcher $SNAPCRAFT_PART_INSTALL/bin/
   wine-2.15:
     plugin: autotools
     prepare: |
         set -e
         git clone --depth=1 -b wine-2.15 git://source.winehq.org/git/wine.git wine
         mv wine/* .
+        rm -rf wine
     build-packages:
       - bison
       - desktop-file-utils
@@ -25,50 +52,53 @@ parts:
       - flex
       - fontforge
       - gettext
-      - libasound2-dev:i386
-      - libcapi20-dev:i386
-      - libcups2-dev:i386
-      - libdbus-1-dev:i386
-      - libfontconfig-dev:i386
-      - libfreetype6-dev:i386
-      - libgif-dev:i386
-      - libgl-dev:i386
-      - libglu-dev:i386
-      - libgnutls-dev:i386
-      - libgphoto2-dev:i386
-      - libgsm1-dev:i386
-      - libjpeg-dev:i386
-      - liblcms2-dev:i386
-      - libldap2-dev:i386
-      - libmpg123-dev:i386
-      - libncurses-dev:i386
-      - libopenal-dev:i386
-      - libosmesa6-dev:i386
-      - libpng12-dev:i386
-      - libpulse-dev:i386
-      - libsane-dev:i386
-      - libtiff-dev:i386
-      - libv4l-dev:i386
-      - libx11-dev:i386
-      - libxcomposite-dev:i386
-      - libxcursor-dev:i386
-      - libxext-dev:i386
-      - libxi-dev:i386
-      - libxinerama-dev:i386
-      - libxml2-dev:i386
-      - libxrandr-dev:i386
-      - libxrender-dev:i386
-      - libxslt1-dev:i386
-      - libxt-dev:i386
-      - libxxf86vm-dev:i386
+      - libasound2-dev
+      - libcapi20-dev
+      - libcups2-dev
+      - libdbus-1-dev
+      - libfontconfig-dev
+      - libfreetype6-dev
+      - libgif-dev
+      - libgl-dev
+      - libglu-dev
+      - libgnutls-dev
+      - libgphoto2-dev
+      - libgsm1-dev
+      - libjpeg-dev
+      - liblcms2-dev
+      - libldap2-dev
+      - libmpg123-dev
+      - libncurses-dev
+      - libopenal-dev
+      - libosmesa6-dev
+      - libpng12-dev
+      - libpulse-dev
+      - libsane-dev
+      - libtiff-dev
+      - libv4l-dev
+      - libx11-dev
+      - libxcomposite-dev
+      - libxcursor-dev
+      - libxext-dev
+      - libxi-dev
+      - libxinerama-dev
+      - libxml2-dev
+      - libxrandr-dev
+      - libxrender-dev
+      - libxslt1-dev
+      - libxt-dev
+      - libxxf86vm-dev
       - linux-kernel-headers
-      - ocl-icd-opencl-dev:i386
+      - ocl-icd-opencl-dev
       - oss4-dev
       - prelink
       - valgrind
-      - unixodbc-dev:i386
-      - x11proto-xinerama-dev:i386
-
+      - unixodbc-dev
+      - x11proto-xinerama-dev
     stage-packages:
-      - libc-bin
-
+      - libfreetype6
+      - fontconfig-config
+      - libpng12-0
+      - zlib1g
+      - libncurses5
+    after: [ launcher ]
