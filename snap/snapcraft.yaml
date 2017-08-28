@@ -9,25 +9,25 @@ architectures: [ amd64 ]
 apps:
   notepad:
     command: launcher notepad
-    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe ]
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
   wine:
     command: launcher wine
-    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe ]
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
   wineserver:
     command: launcher wineserver
-    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe ]
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
   winecfg:
     command: launcher winecfg
-    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe ]
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
   regedit:
     command: launcher regedit
-    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe ]
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
   wineconsole:
     command: launcher wineconsole
-    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe ]
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
   winefile:
     command: launcher winefile
-    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe ]
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
 
 
 parts:
@@ -68,7 +68,7 @@ parts:
       - liblcms2-dev
       - libldap2-dev
       - libmpg123-dev
-      - libncurses-dev
+      - libncurses5-dev
       - libopenal-dev
       - libosmesa6-dev
       - libpng12-dev
@@ -101,4 +101,5 @@ parts:
       - libpng12-0
       - zlib1g
       - libncurses5
+      - libgnutls30
     after: [ launcher ]
