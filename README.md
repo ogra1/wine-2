@@ -14,7 +14,7 @@ First create an i386 lxc container:
 
 `lxc exec local:snapcraft-i386 -- script /dev/null -c bash`
 
-inside the container install snapcraft and git ... 
+inside the container install snapcraft and git, clone this branch and run snapcraft ... 
 
 `git clone https://github.com/ogra1/wine-2.15.git`
 
