@@ -1,4 +1,4 @@
-name: wine-2.15
+name: wine2-15
 version: 1.0
 summary: An experimental wine-2.15 snap
 description: Wine-2.15 as an experimental snap
