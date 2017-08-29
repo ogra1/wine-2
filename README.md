@@ -7,6 +7,7 @@ This is an experimental wine snap
 First create an i386 lxc container:
 
 `snap install lxd`
+
 `lxd init`
 
 `lxc launch ubuntu:16.04/i386 local:snapcraft-i386`
