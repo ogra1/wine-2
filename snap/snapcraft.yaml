@@ -38,11 +38,9 @@ parts:
       cp ./launcher $SNAPCRAFT_PART_INSTALL/bin/
   wine-2.15:
     plugin: autotools
-    prepare: |
-        set -e
-        git clone --depth=1 -b wine-2.15 git://source.winehq.org/git/wine.git wine
-        mv wine/* .
-        rm -rf wine
+    source: git://source.winehq.org/git/wine.git
+    source-depth: 1
+    source-tag: wine-2.15
     build-packages:
       - bison
       - desktop-file-utils
