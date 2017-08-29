@@ -28,6 +28,10 @@ apps:
   winefile:
     command: launcher winefile
     plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
+  winemine:
+    command: launcher winemine
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
+
 
 
 parts:
