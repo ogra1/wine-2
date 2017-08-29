@@ -35,11 +35,6 @@ apps:
 
 
 parts:
-  launcher:
-    plugin: nil
-    install: |
-      mkdir -p $SNAPCRAFT_PART_INSTALL/bin
-      cp ./launcher $SNAPCRAFT_PART_INSTALL/bin/
   wine-2.15:
     plugin: autotools
     source: git://source.winehq.org/git/wine.git
@@ -104,4 +99,9 @@ parts:
       - zlib1g
       - libncurses5
       - libgnutls30
-    after: [ launcher ]
+  launcher:
+    plugin: nil
+    install: |
+      mkdir -p $SNAPCRAFT_PART_INSTALL/bin
+      cp ./launcher $SNAPCRAFT_PART_INSTALL/bin/
+    after: [ wine-2.15 ]
