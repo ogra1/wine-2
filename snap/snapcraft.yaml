@@ -32,8 +32,6 @@ apps:
     command: launcher winemine
     plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
 
-
-
 parts:
   wine-2.15:
     plugin: autotools
