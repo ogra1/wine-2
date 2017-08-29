@@ -9,8 +9,10 @@ export WINELOADER=$SNAP/bin/wine
 export WINEDLLPATH=$SNAP/lib/wine/fakedlls
 export LD_LIBRARY_PATH="$SNAP/lib:$SNAP/lib/$ARCH:$SNAP/usr/lib:$SNAP/usr/lib/$ARCH:$LD_LIBRARY_PATH" 
 
-# fonts
+export HOME=$SNAP_USER_COMMON
 export XDG_DATA_HOME=$SNAP_USER_COMMON/usr/share
+
+# fonts
 export FONTCONFIG_PATH=$SNAP/etc/fonts/config.d
 export FONTCONFIG_FILE=$SNAP/etc/fonts/fonts.conf
 
