@@ -11,6 +11,8 @@ apps:
     command: launcher notepad
     plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
   wine:
+    aliases:
+    - wine
     command: launcher wine
     plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
   wineserver:
