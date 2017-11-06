@@ -1,6 +1,6 @@
-# wine-2.15
+# wine-2
 
-This is an experimental wine snap 
+This is an experimental snap of the wine-2 tree (trying to follow the latest 2.x release)
 
 ## Building
 
@@ -16,8 +16,8 @@ First create an i386 lxc container:
 
 inside the container install snapcraft and git, clone this branch and run snapcraft ... 
 
-`git clone https://github.com/ogra1/wine-2.15.git`
+`git clone https://github.com/ogra1/wine-2.git`
 
-`cd wine-2.15`
+`cd wine-2`
 
 `snapcraft`
