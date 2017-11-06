@@ -1,7 +1,7 @@
-name: wine2-15
+name: wine2
 version: 1.0
-summary: An experimental wine-2.15 snap
-description: Wine-2.15 as an experimental snap
+summary: An experimental wine-2 snap
+description: Wine-2 as an experimental snap
 confinement: devmode
 grade: stable
 architectures: [ amd64 ]
@@ -35,11 +35,11 @@ apps:
     plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind, cups-control ]
 
 parts:
-  wine-2.15:
+  wine-2:
     plugin: autotools
     source: git://source.winehq.org/git/wine.git
     source-depth: 1
-    source-tag: wine-2.15
+    source-tag: wine-2.20
     build-packages:
       - bison
       - desktop-file-utils
@@ -104,4 +104,4 @@ parts:
     install: |
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin
       cp ./launcher $SNAPCRAFT_PART_INSTALL/bin/
-    after: [ wine-2.15 ]
+    after: [ wine-2 ]
