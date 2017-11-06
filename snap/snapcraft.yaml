@@ -9,30 +9,30 @@ architectures: [ amd64 ]
 apps:
   notepad:
     command: launcher notepad
-    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind, cups-control ]
   wine:
     aliases:
     - wine
     command: launcher wine
-    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind, cups-control ]
   wineserver:
     command: launcher wineserver
-    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind, cups-control ]
   winecfg:
     command: launcher winecfg
-    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind, cups-control ]
   regedit:
     command: launcher regedit
-    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind, cups-control ]
   wineconsole:
     command: launcher wineconsole
-    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind, cups-control ]
   winefile:
     command: launcher winefile
-    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind, cups-control ]
   winemine:
     command: launcher winemine
-    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind ]
+    plugs: [ x11, unity7, opengl, home, pulseaudio, hardware-observe, network, network-bind, cups-control ]
 
 parts:
   wine-2.15:
