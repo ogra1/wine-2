@@ -1,7 +1,14 @@
 name: wine2
-version: 1.0
+version: 2.20
 summary: An experimental wine-2 snap
-description: Wine-2 as an experimental snap
+description: |
+    Wine 2.x as an experimental snap
+    .
+    Find Build instructions and the source for this snap at
+    https://github.com/ogra1/wine-2
+    It attenpts to always build the latest released version
+    from https://source.winehq.org/source/
+
 confinement: devmode
 grade: stable
 architectures: [ amd64 ]
