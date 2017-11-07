@@ -4,9 +4,9 @@ summary: An experimental wine-2 snap
 description: |
     Wine 2.x as an experimental snap
     .
-    Find Build instructions and the source for this snap at
+    Find build instructions and the source for this snap at
     https://github.com/ogra1/wine-2
-    It attenpts to always build the latest released version
+    It attempts to always build the latest released version
     from https://source.winehq.org/source/
 
 confinement: devmode
