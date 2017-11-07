@@ -57,6 +57,7 @@ parts:
       - fontforge
       - gettext
       - libasound2-dev
+      - libasyncns-dev
       - libcapi20-dev
       - libcups2-dev
       - libdbus-1-dev
@@ -69,6 +70,7 @@ parts:
       - libgphoto2-dev
       - libgsm1-dev
       - libjpeg-dev
+      - libjson-c-dev
       - liblcms2-dev
       - libldap2-dev
       - libmpg123-dev
@@ -100,6 +102,7 @@ parts:
       - unixodbc-dev
       - x11proto-xinerama-dev
     stage-packages:
+      - libasound2-plugins
       - libfreetype6
       - fontconfig-config
       - libpng12-0
